@@ -1,0 +1,670 @@
+
+.foggy-grid-bg {
+  position: relative;
+  background-color: #F3F7F8;
+  background-image:
+    linear-gradient(to right, rgba(200, 220, 250, 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(200, 220, 250, 0.25) 1px, transparent 1px);
+  background-size: 80px 80px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* === Outer fog layers === */
+.foggy-grid-bg::before,
+.foggy-grid-bg::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+  filter: blur(160px);
+  opacity: 0.85;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.95), transparent 150%);
+}
+
+/* --- Top-left fog --- */
+.foggy-grid-bg::before {
+  top: -300px;
+  left: -200px;
+}
+
+/* --- Bottom-right fog --- */
+.foggy-grid-bg::after {
+  bottom: -250px;
+  right: -250px;
+}
+
+/* === Middle focused grid overlay === */
+.foggy-grid-bg::after {
+  background: 
+    radial-gradient(circle at center,
+      rgba(218, 234, 249, 0.9) 0%,
+      rgba(218, 234, 249, 0.4) 40%,
+      transparent 70%);
+  mix-blend-mode: soft-light;
+  opacity: 0.6;
+  filter: blur(20px);
+}
+
+/* === Optional gentle floating fog animation === */
+@keyframes softFloat {
+  0%, 100% { transform: translateY(0); opacity: 0.85; }
+  50% { transform: translateY(-20px); opacity: 1; }
+}
+
+.foggy-grid-bg::before,
+.foggy-grid-bg::after {
+  animation: softFloat 12s ease-in-out infinite alternate;
+}
+
+
+
+/* .founder-section{
+  height: 100vh;
+} */
+
+
+
+
+/* === Section Wrapper (center alignment) === */
+.pulse-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 20vh;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* === Pulse Capsule === */
+.pulse-pill {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #cee4ff, #d8f1ff, #cee4ff);
+  box-shadow: 0 0 18px rgba(173, 216, 255, 0.3);
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+}
+
+.pulse-pill-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  background: #fff;
+  border-radius: 999px;
+  border: 3px solid #f1f1f1;
+  padding: 10px 26px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* === Glowing Dot Animation === */
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #1a73e8;
+  box-shadow:
+    0 0 0 4px rgba(141, 184, 238, 0.6),
+    0 0 0 6px rgba(205, 224, 248, 0.4);
+  animation: softPulse 2.6s ease-in-out infinite;
+}
+
+@keyframes softPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow:
+      0 0 0 5px rgba(141, 184, 238, 0.6),
+      0 0 0 10px rgba(205, 224, 248, 0.4);
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow:
+      0 0 0 6px rgba(141, 184, 238, 0.8),
+      0 0 0 8px rgba(205, 224, 248, 0.6);
+  }
+}
+
+/* === Responsive === */
+@media (max-width: 600px) {
+  .pulse-pill-inner {
+    padding: 8px 20px;
+    font-size: 14px;
+    gap: 10px;
+  }
+
+  .pulse-dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+
+/* ==========================================================
+   FOUNDER SECTION LAYOUT
+   ========================================================== */
+
+.founder-section {
+  position: relative;
+  /* padding: 100px 40px 140px; */
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+
+.founder-container{
+   background-color: transparent;  
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+
+
+
+
+.founder-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin: 0 auto; */
+  margin-bottom: 200px;
+  flex-wrap: wrap;
+  background-color: transparent;
+}
+
+/* ==========================================================
+   LEFT SIDE
+   ========================================================== */
+
+.founder-left {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  width: 48%;
+  position: relative;
+  background-color: transparent;
+}
+
+/* --- Intro Text --- */
+.founder-intro {
+  text-align: start;
+  margin-bottom: 40px;
+  font-size: 24px;
+}
+
+.founder-heading {
+  font-size: 32px;
+  font-weight: 500;
+  color: #111;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.founder-heading span {
+  font-family: "Instrument Serif", serif;
+  font-weight: 500;
+  font-style: italic;
+  color: #0051ff;
+  font-size: 39px;
+}
+
+.founder-subtext {
+  color: #525252;
+  font-size: 16px;
+  max-width: 480px;
+  /* margin: 0 auto; */
+  line-height: 1.6;
+}
+
+/* --- Founder Image --- */
+.founder-image {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.1),
+    0 4px 10px rgba(0, 0, 0, 0.05);
+  border: 5px solid #F2F5F6;
+  z-index: 2;
+}
+
+.founder-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================
+   FOUNDER NOTE CARD
+   ========================================================== */
+
+.founder-note {
+  position: absolute;
+  font-size: 15px;
+  bottom: -40px;
+  left: 10%;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 20px 23px;
+  width: 450px;
+  text-align: left;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #333;
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.06),
+    0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 3;
+}
+
+/* Hover lift */
+.founder-note:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.08),
+    0 6px 14px rgba(0, 0, 0, 0.04);
+}
+
+/* --- Label Capsule --- */
+.note-label {
+  position: absolute;
+  top: -18px;
+  left: 22px;
+  background: #CAE3FF;
+  color: #000000;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 9px;
+  white-space: nowrap;
+}
+
+/* --- Note Text --- */
+.founder-note p {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.founder-note em {
+  font-style: italic;
+  color: #111;
+  font-weight: 500;
+}
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media (max-width: 992px) {
+  .founder-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .founder-left {
+    width: 100%;
+    align-items: center;
+  }
+
+  .founder-image {
+    width: 260px;
+    height: 260px;
+  }
+
+  .founder-note {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    margin-top: 25px;
+    width: 90%;
+  }
+
+  .founder-heading {
+    font-size: 26px;
+  }
+
+  .founder-subtext {
+    font-size: 15px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================
+   RIGHT SIDE - FOUNDER MESSAGE CARD (FINAL REFINED)
+   ========================================================== */
+
+.founder-right {
+  background-color: transparent;
+  width: 48%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+}
+
+.founder-message-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 8px solid #FAFAFA;
+  padding: 44px 40px;
+  width: 470px;
+  text-align: left;
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.05),
+    0 4px 10px rgba(0, 0, 0, 0.03);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #222;
+  line-height: 1.75;
+  z-index: 2;
+  overflow: hidden;
+}
+
+/* ==========================================================
+   BLUE LINE WITH INNER MARGIN
+   ========================================================== */
+.founder-message-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 60px; 
+  height: 100%;
+  width: 1.6px; /* Slightly thinner line */
+  background: #1a73e8;
+  opacity: 0.8;
+  border-radius: 2px;
+  box-shadow: 0 0 6px rgba(0, 102, 255, 0.25);
+}
+
+/* ==========================================================
+   TEXT
+   ========================================================== */
+
+.page-card-content{
+  padding-left: 35px;
+}
+
+.founder-message-card p {
+  font-size: 15px;
+  color: #222;
+  margin-bottom: 18px;
+}
+
+.founder-message-card strong {
+  font-weight: 700;
+  color: #000;
+}
+
+.founder-signature {
+  margin-top: 28px;
+}
+
+.founder-signature strong {
+  font-weight: 700;
+  color: #111;
+}
+
+.founder-signature span {
+  display: block;
+  font-size: 13px;
+  color: #9ba2ad;
+  margin-top: 2px;
+}
+
+/* ==========================================================
+   HOLES
+   ========================================================== */
+.card-hole {
+  position: absolute;
+  left: 25px;
+  width: 18px;
+  height: 18px;
+  background: #f6f9fc;
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 4px rgba(0, 0, 0, 0.1),
+    0 0 2px rgba(0, 0, 0, 0.05);
+}
+
+.top-hole {
+  top: 38px;
+}
+
+.bottom-hole {
+  bottom: 38px;
+}
+
+/* ==========================================================
+   TAPE — Realistic Sticky Look
+   ========================================================== */
+.card-tape {
+  position: absolute;
+  top: 40px;
+  right: -50px;
+  width: 160px;
+  height: 16px;
+  background: #c9dbff;
+  opacity: 0.92;
+  border-radius: 3px;
+  transform: rotate(45deg);
+  z-index: 1; /* Above card surface, below text */
+  mix-blend-mode: multiply; /* blends naturally into white background */
+  box-shadow:
+    inset 0 -1px 2px rgba(0, 0, 0, 0.08), /* pressed tape shadow */
+    0 2px 4px rgba(0, 0, 0, 0.05); /* faint edge lift shadow */
+}
+
+/* Optional: Makes sure tape shadow doesn't affect outside layers */
+.founder-message-card {
+  isolation: isolate;
+}
+
+
+
+
+
+
+
+
+/* Base stays the same (fog, grid, pulse, etc.) */
+
+/* ==========================================================
+   FOUNDER SECTION — RESPONSIVE REFINEMENT
+   ========================================================== */
+@media (max-width: 992px) {
+  .founder-section {
+    padding: 60px 20px;
+  }
+
+  .founder-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .founder-left, .founder-right {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .founder-heading {
+    font-size: 24px;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+
+  .founder-heading span {
+    font-size: 30px;
+  }
+
+  .founder-subtext {
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 90%;
+    color: #555;
+    margin: 0 auto;
+  }
+
+  .founder-image {
+    width: 240px;
+    height: 240px;
+    border-width: 4px;
+    margin: 0 auto;
+  }
+
+  .founder-note {
+    position: relative;
+    width: 92%;
+    margin-top: 25px;
+    padding: 16px 18px;
+    font-size: 14px;
+  }
+
+  .note-label {
+    top: -14px;
+    left: 18px;
+    font-size: 12px;
+    padding: 5px 12px;
+  }
+}
+
+/* ==========================================================
+   RIGHT SIDE — MESSAGE CARD (Mobile)
+   ========================================================== */
+@media (max-width: 768px) {
+  .founder-message-card {
+    width: 92%;
+    padding: 28px 22px;
+    border-width: 6px;
+    border-radius: 16px;
+  }
+
+  .founder-message-card::before {
+    left: 18px;
+    width: 1.2px;
+  }
+
+  .page-card-content {
+    padding-left: 20px;
+  }
+
+  .founder-message-card p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .founder-signature strong {
+    font-size: 15px;
+  }
+
+  .founder-signature span {
+    font-size: 12px;
+  }
+
+  .card-hole {
+    width: 14px;
+    height: 14px;
+    left: 10px;
+  }
+
+  .top-hole {
+    top: 28px;
+  }
+
+  .bottom-hole {
+    bottom: 28px;
+  }
+
+  .card-tape {
+    width: 80px;
+    height: 12px;
+    right: -30px;
+    top: 32px;
+  }
+}
+
+/* ==========================================================
+   PULSE CAPSULE — Smaller but same vibe
+   ========================================================== */
+@media (max-width: 600px) {
+  .pulse-section {
+    min-height: 10vh;
+    
+  }
+
+  .founder-intro {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 24px;
+}
+
+  .pulse-pill-inner {
+        padding: 10px 20px;
+        font-size: 15px;
+        gap: 20px;
+        border-width: 3px;
+
+  }
+
+  .pulse-dot {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+/* ==========================================================
+   FOGGY GRID BACKGROUND — Subtle fade on smaller screens
+   ========================================================== */
+@media (max-width: 768px) {
+  .foggy-grid-bg {
+    background-size: 60px 60px;
+  }
+
+  .foggy-grid-bg::before,
+  .foggy-grid-bg::after {
+    width: 600px;
+    height: 600px;
+    filter: blur(120px);
+    opacity: 0.7;
+  }
+}

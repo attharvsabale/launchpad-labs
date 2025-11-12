@@ -1,0 +1,458 @@
+/* ==========================================================
+   GLOBAL STYLE
+   ========================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f8fbfd;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #111;
+}
+
+/* ==========================================================
+   PROJECT PREVIEW SECTION
+   ========================================================== */
+.qunie-case-preview {
+  position: relative;
+  background: #f8fbfd;
+  padding: 100px 40px 160px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.preview-wrapper {
+  position: relative;
+  width: 70%;
+  margin-top: 10px;
+  border-radius: 32px;
+  background: linear-gradient(135deg, #dcebff 0%, #ffffff 100%);
+  padding: 60px;
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.05),
+    0 0 60px rgba(210, 230, 255, 0.6);
+  overflow: hidden;
+}
+
+.preview-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.preview-bg {
+  position: relative;
+  width: 90%;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.04),
+    0 0 50px rgba(220, 230, 255, 0.6),
+    inset 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.preview-bg img {
+  width: 90%;
+  display: block;
+  border-radius: 24px;
+}
+
+.preview-overlay {
+  position: absolute;
+  bottom: -60px;
+  left: 68%;
+  transform: translateX(-50%);
+  width: 78%;
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.preview-overlay img {
+  width: 100%;
+  display: block;
+  border-radius: 22px;
+}
+
+.preview-overlay::after {
+  content: "";
+  position: absolute;
+  bottom: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 280px;
+  background: radial-gradient(circle at center,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(220, 235, 255, 0.4) 60%,
+    transparent 100%);
+  filter: blur(80px);
+  opacity: 0.9;
+  z-index: -1;
+}
+
+/* BACK BUTTON */
+.back-btn {
+  position: absolute;
+  top: 40px;
+  left: 270px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 9999px;
+  border: 1.5px dashed #03d0ff;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  color: #474141;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-btn i {
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.back-btn:hover {
+  background: linear-gradient(90deg, rgba(46,79,255,0.08), rgba(0,198,255,0.08));
+  transform: translateY(-2px);
+}
+
+.back-btn:hover i {
+  transform: translateX(-3px);
+}
+
+/* ==========================================================
+   PROJECT INFO SECTION
+   ========================================================== */
+.project-info-section {
+  background: #f8fbfd;
+  padding: 100px 100px 140px;
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.project-title {
+  font-size: 38px;
+  font-weight: 700;
+  color: #222;
+}
+
+.view-project-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #111;
+  background: transparent;
+  border-radius: 9999px;
+  border: 2.5px solid #92c7ff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-project-btn i {
+  font-size: 13px;
+}
+
+.view-project-btn:hover {
+  background: linear-gradient(90deg, rgba(46,79,255,0.08), rgba(0,198,255,0.08));
+  transform: translateY(-2px);
+}
+
+.project-info-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #92c7ff;
+  border-radius: 12px;
+  padding: 25px 10px;
+  background: #fff;
+  margin-bottom: 100px;
+}
+
+.info-item {
+  flex: 1;
+  text-align: center;
+}
+
+.info-label {
+  color: #888;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.info-value {
+  color: #111;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.tag-list {
+  display: inline-flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tag-list span {
+  background: #eaf2ff;
+  color: #1a73e8;
+  font-size: 14px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+/* OVERVIEW SECTION */
+.project-overview {
+  text-align: center;
+  max-width: 1300px;
+  margin: 0 auto 100px;
+}
+
+.overview-title {
+  font-size: 44px;
+  font-weight: 600;
+  color: #828282;
+  margin-bottom: 24px;
+}
+
+.overview-text {
+  color: #222;
+  font-size: 19px;
+  line-height: 1.8;
+  text-align: justify;
+  text-justify: inter-word;
+  letter-spacing: 0.2px;
+  margin: 0 auto;
+}
+
+/* PRODUCT SECTION */
+.project-product {
+  text-align: center;
+}
+
+.product-title {
+  font-size: 44px;
+  font-weight: 600;
+  color: #828282;
+}
+
+/* ==========================================================
+   SHOWCASE SECTION (Alternating Layout)
+   ========================================================== */
+.qunie-showcase {
+  background: #f8fbfd;
+  padding: 100px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.showcase-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.showcase-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.showcase-text {
+  flex: 1;
+  max-width: 520px;
+}
+
+.showcase-text h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.showcase-text p {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #333;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.showcase-visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.visual-outer {
+  position: relative;
+  width: 600px;
+  height: 340px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #d8e8ff 0%, #ffffff 80%);
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.05),
+    0 0 80px rgba(200, 220, 255, 0.6);
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  padding: 40px;
+}
+
+.visual-inner img {
+  width: 120%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.08),
+    0 0 40px rgba(220, 230, 255, 0.5),
+    inset 0 0 10px rgba(255, 255, 255, 0.4);
+  transition: all 0.35s ease;
+}
+
+.visual-inner img:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.1),
+    0 0 60px rgba(200, 220, 255, 0.6);
+}
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+   ========================================================== */
+@media (max-width: 900px) {
+  .preview-wrapper {
+    width: 90%;
+    padding: 40px;
+    border-radius: 28px;
+  }
+
+  .preview-overlay {
+    width: 90%;
+    bottom: -40px;
+  }
+
+  .back-btn {
+    top: 30px;
+    left: 30px;
+    font-size: 13px;
+  }
+
+  .project-info-section {
+    padding: 80px 40px;
+  }
+
+  .project-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .project-info-box {
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+  }
+
+  .showcase-row,
+  .showcase-row.reverse {
+    flex-direction: column;
+    
+    text-align: start;
+  }
+
+  .visual-outer {
+    width: 380px;
+    height: 280px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .qunie-case-preview {
+    padding: 80px 20px 5px;
+  }
+
+  .tag-list {
+    display: inline-flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+  .preview-wrapper {
+    width: 95%;
+    padding: 28px;
+    border-radius: 24px;
+  }
+
+  .preview-overlay {
+    width: 100%;
+    bottom: -30px;
+  }
+
+  .back-btn {
+    top: 25px;
+    left: 25px;
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+
+  .project-title {
+    font-size: 28px;
+  }
+
+  .view-project-btn {
+    font-size: 13px;
+    padding: 8px 14px;
+  }
+
+  .overview-title,
+  .product-title {
+    font-size: 26px;
+  }
+
+  .overview-text {
+    font-size: 15px;
+  }
+
+  .qunie-showcase {
+    padding: 60px 25px;
+    gap: 80px;
+  }
+
+  .showcase-text h3 {
+    font-size: 18px;
+  }
+
+  .showcase-text p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .visual-outer {
+    width: 310px;
+    height: 240px;
+    padding: 20px;
+  }
+}

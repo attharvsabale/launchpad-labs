@@ -1,0 +1,593 @@
+/* ==========================================================
+   QUNIE HERO SECTION
+   ========================================================== */
+.qunie-hero-section {
+  padding: 90px 60px 80px 100px;
+  background: #F3F7F8;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.qunie-hero-container {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+
+/* LEFT CONTENT */
+.qunie-hero-left {
+  flex: 1;
+}
+
+.qunie-hero-title {
+  font-size: 48px;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 12px;
+}
+
+.qunie-hero-title span {
+  background: linear-gradient(90deg, #231BAF, #0FA6EC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  font-weight: 600;
+}
+
+
+.qunie-hero-subtext {
+  color: #555;
+  font-size: 17px;
+  line-height: 1.6;
+  max-width: 460px;
+}
+
+/* ==========================================================
+   RIGHT SIDE CALENDAR CARD
+   ========================================================== */
+.qunie-hero-right {
+  flex: 0 0 340px;
+  position: relative;
+}
+
+.qunie-calendar-card {
+  position: relative;
+  width: 280px;
+  background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
+  border-radius: 24px;
+  padding: 20px 22px 24px;
+  text-align: center;
+  overflow: hidden;
+  box-shadow:
+    0 12px 28px rgba(255, 255, 255, 0.6),
+    0 20px 50px rgba(200, 230, 255, 0.35),
+    0 0 80px rgba(230, 240, 255, 0.6),
+    inset 0 0 15px rgba(255, 255, 255, 0.4);
+  filter: drop-shadow(0 6px 15px rgba(180, 200, 255, 0.25));
+  backdrop-filter: blur(6px);
+}
+
+/* Subtle fog mist under the card */
+.qunie-calendar-card::before {
+  content: "";
+  position: absolute;
+  bottom: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(210, 230, 255, 0.4) 35%,
+    transparent 100%
+  );
+  filter: blur(90px);
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 0;
+  animation: fogDrift 10s ease-in-out infinite alternate;
+}
+
+@keyframes fogDrift {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+    opacity: 1;
+  }
+}
+
+/* Header */
+.qunie-calendar-card h5 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #3a3a3a;
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+.qunie-calendar-card h5 span {
+  color: #b8b8b8;
+  font-weight: 500;
+}
+
+/* Weekday labels */
+.qunie-calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-size: 12px;
+  font-weight: 600;
+  color: #9c9c9c;
+  margin-bottom: 12px;
+}
+
+/* Calendar days */
+.qunie-calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+/* Day box */
+.qunie-calendar-days span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #6e6e6e;
+  background: #efefef;
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.8),
+    0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
+}
+
+.qunie-calendar-days span.dim {
+  color: #c3c7cc;
+  opacity: 0.9;
+  background: #efefef;
+  box-shadow: none;
+}
+
+/* Hover */
+.qunie-calendar-days span:hover:not(.selected) {
+  background: #e8f2ff;
+  color: #1a73e8;
+}
+
+/* Selected day */
+.qunie-calendar-days span.selected {
+  background: linear-gradient(180deg, #64a9ff 0%, #2b7cff 100%);
+  color: #fff;
+  font-weight: 700;
+  box-shadow:
+    0 4px 12px rgba(33, 123, 255, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.45),
+    inset 0 2px 6px rgba(255, 255, 255, 0.25);
+  position: relative;
+  overflow: visible;
+}
+
+/* Pointer cursor under selected day */
+.qunie-calendar-cursor {
+  position: absolute;
+  bottom: -25px;
+  left: 100%;
+  transform: translateX(-50%);
+  width: 26px;
+  height: auto;
+  filter: drop-shadow(-2px 2px 5px rgba(33, 123, 255, 0.35));
+}
+
+/* ==========================================================
+   BLUE GLOW BUTTON
+   ========================================================== */
+.qunie-btn-glow {
+  position: absolute;
+  top: -120px;
+  left: -160px;
+  transform: none;
+  background: linear-gradient(180deg, #1e90ff 0%, #006cff 100%);
+  color: #fff;
+  border: 2px solid #3db9ff;
+  border-radius: 9999px;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  box-shadow:
+    0 10px 25px rgba(0, 123, 255, 0.25),
+    0 4px 10px rgba(0, 123, 255, 0.15);
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Inner glow (white reflection) */
+.qunie-btn-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.25),
+    transparent 70%
+  );
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Hover effect */
+.qunie-btn-glow:hover {
+  transform: translate(-5%, -5%) scale(1.05);
+  box-shadow:
+    0 16px 32px rgba(0, 123, 255, 0.3),
+    0 8px 16px rgba(0, 123, 255, 0.2);
+  border-color: #5ad3ff;
+  background: linear-gradient(180deg, #2ea2ff 0%, #1870ff 100%);
+}
+
+/* Optional icon spacing fix */
+.qunie-btn-glow i {
+  margin-right: 8px;
+  font-size: 15px;
+}
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+   ========================================================== */
+
+
+   /* ==========================================================
+   RESPONSIVE DESIGN
+   ========================================================== */
+
+/* --- Tablet (max-width: 900px) --- */
+@media (max-width: 900px) {
+  .qunie-hero-section {
+    padding: 60px 40px 80px;
+    text-align: center;
+  }
+
+  .qunie-hero-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .qunie-hero-title {
+    font-size: 38px;
+    line-height: 1.2;
+  }
+
+  .qunie-hero-subtext {
+    font-size: 15px;
+    color: #666;
+  }
+
+  .qunie-calendar-card {
+    width: 90%;
+    max-width: 320px;
+    padding: 18px 20px 22px;
+    box-shadow:
+      0 8px 20px rgba(200, 230, 255, 0.4),
+      0 0 40px rgba(255, 255, 255, 0.3),
+      inset 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+
+  /* Button center on tablet */
+  .qunie-btn-glow {
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 15px;
+    padding: 10px 24px;
+  }
+
+  /* ✅ Disable movement hover effect on tablet */
+  .qunie-btn-glow:hover {
+    transform: translateX(-50%) !important;
+    box-shadow:
+      0 8px 20px rgba(0, 123, 255, 0.25),
+      0 4px 8px rgba(0, 123, 255, 0.15);
+  }
+
+  
+}
+
+/* --- Mobile (max-width: 600px) --- */
+@media (max-width: 600px) {
+  .qunie-hero-section {
+    padding: 60px 20px 0px;
+  }
+
+  .qunie-hero-title {
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  .qunie-hero-subtext {
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .qunie-calendar-card {
+    width: 100%;
+    border-radius: 20px;
+    padding: 16px 18px 20px;
+    box-shadow:
+      0 6px 18px rgba(230, 240, 255, 0.35),
+      0 0 25px rgba(255, 255, 255, 0.25),
+      inset 0 0 8px rgba(255, 255, 255, 0.25);
+  }
+
+  .qunie-calendar-days span {
+    height: 26px;
+    font-size: 12px;
+  }
+
+  .qunie-btn-glow {
+    top: -50px;
+    font-size: 14px;
+    padding: 10px 22px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* ✅ Completely disable hover animation on mobile */
+  .qunie-btn-glow:hover {
+    transform: translateX(-50%) !important;
+    box-shadow:
+      0 6px 18px rgba(0, 123, 255, 0.18),
+      0 2px 8px rgba(0, 123, 255, 0.1);
+  }
+
+  .qunie-calendar-card h5 {
+    font-size: 14px;
+  }
+
+  .qunie-calendar-weekdays {
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+}
+
+/* --- Small phones (max-width: 400px) --- */
+@media (max-width: 400px) {
+  .qunie-hero-title {
+    font-size: 26px;
+  }
+
+  .qunie-hero-subtext {
+    font-size: 13px;
+  }
+
+  .qunie-calendar-card {
+    width: 95%;
+    padding: 14px 16px;
+  }
+
+  .qunie-btn-glow {
+    top: -40px;
+    font-size: 13px;
+    padding: 9px 20px;
+  }
+
+  /* ✅ No hover motion on tiny screens */
+  .qunie-btn-glow:hover {
+    transform: translateX(-50%) !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================
+   CASE STUDIES SECTION — PIXEL PERFECT (LaunchPad Style)
+   ========================================================== */
+.qunie-case-studies {
+  background: #F3F7F8;
+  padding: 80px 200px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.qunie-case-container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* === CASE CARD === */
+.qunie-case-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #FFFFFF;
+  border-radius: 18px;
+  padding: 40px 50px;
+  transition: all 0.35s ease;
+
+  /* --- Professional Fog + Depth Shadow --- */
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.05),      /* soft black base shadow */
+    0 30px 60px rgba(0, 0, 0, 0.07),      /* deeper diffused shadow */
+    0 0 60px rgba(255, 255, 255, 0.8),    /* glowing white fog layer */
+    inset 0 0 25px rgba(255, 255, 255, 0.3); /* subtle inner fog glow */
+  backdrop-filter: blur(4px);
+}
+
+.qunie-case-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 15px 30px rgba(0, 0, 0, 0.07),
+    0 40px 80px rgba(0, 0, 0, 0.09),
+    0 0 80px rgba(255, 255, 255, 0.9),
+    inset 0 0 30px rgba(255, 255, 255, 0.35);
+}
+
+/* === LEFT SIDE === */
+.qunie-case-left {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.case-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.case-desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 22px;
+  max-width: 520px;
+}
+
+/* === TAGS === */
+.case-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.case-tags span {
+  background: #edf2f7;
+  color: #111;
+  font-size: 14px;
+  padding: 7px 14px;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.case-tags span:hover {
+  background: #e2ecff;
+}
+
+/* === BUTTON === */
+.case-btn {
+  background: transparent;
+  border: 1.5px solid rgba(26, 115, 232, 0.6);
+  color: #111;
+  padding: 10px 22px;
+  border-radius: 9999px;
+  font-size: 15px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.case-btn:hover {
+  border-color: #1a73e8;
+  background: rgba(26, 115, 232, 0.06);
+  color: #1a73e8;
+}
+
+.case-btn i {
+  font-size: 13px;
+  transition: transform 0.3s ease;
+}
+
+.case-btn:hover i {
+  transform: translateX(4px);
+}
+
+/* === RIGHT SIDE === */
+.qunie-case-right {
+  flex: 0 0 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.qunie-case-right img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.07),
+    0 0 60px rgba(200, 220, 255, 0.5);
+  transition: transform 0.35s ease;
+}
+
+.qunie-case-card:hover .qunie-case-right img {
+  transform: translateY(-3px);
+}
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+@media (max-width: 950px) {
+  .qunie-case-card {
+    flex-direction: column;
+    text-align: start;
+    padding: 40px 30px;
+  }
+
+  .qunie-case-left {
+    padding: 0;
+  }
+
+  .case-desc {
+    max-width: 100%;
+  }
+
+  .qunie-case-right {
+        margin-top: -50px;
+        margin-bottom: -100px;
+  }
+
+  .qunie-case-right img {
+    max-width: 85%;
+  }
+}
+
+@media (max-width: 600px) {
+  .qunie-case-studies {
+    padding: 50px 25px;
+  }
+
+  .case-title {
+    font-size: 20px;
+  }
+
+  .case-btn {
+    font-size: 14px;
+    padding: 9px 18px;
+  }
+}

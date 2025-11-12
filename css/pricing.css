@@ -1,0 +1,578 @@
+/* ==========================================================
+   PRICING HERO SECTION
+   ========================================================== */
+
+.pricing-hero {
+  background: #f6f9fc;
+  text-align: center;
+  padding: 100px 20px 60px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* === Capsule (Pricing Pill) === */
+.pricing-pill {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #cee4ff, #d8f1ff, #cee4ff);
+  box-shadow: 0 0 15px rgba(173, 216, 255, 0.25);
+  margin-bottom: 40px;
+}
+
+.pricing-pill-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  background: #fff;
+  border-radius: 999px;
+  border: 3px solid #f1f1f1;
+  padding: 10px 26px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+}
+
+.pricing-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #1a73e8;
+  box-shadow:
+    0 0 0 4px rgba(141, 184, 238, 0.6),
+    0 0 0 6px rgba(205, 224, 248, 0.4);
+  animation: softPulse 2.6s ease-in-out infinite;
+}
+
+@keyframes softPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow:
+      0 0 0 5px rgba(141, 184, 238, 0.6),
+      0 0 0 8px rgba(205, 224, 248, 0.4);
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow:
+      0 0 0 7px rgba(141, 184, 238, 0.8),
+      0 0 0 10px rgba(205, 224, 248, 0.6);
+  }
+}
+
+/* === Headings === */
+.pricing-heading {
+  font-size: 28px;
+  font-weight: 600;
+  color: #202020;
+  max-width: 900px;
+  margin: 0 auto 15px;
+  line-height: 1.3;
+}
+
+.pricing-subtext {
+  color: #555;
+  font-size: 16px;
+  max-width: 550px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ==========================================================
+   PRICING SECTION
+   ========================================================== */
+
+.pricing-section {
+  background: #f6f9fc;
+  padding: 40px 0 120px;
+}
+
+.pricing-cards {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 20px;
+}
+
+/* === MVP DEVELOPMENT CARD === */
+.pricing-card.single {
+  background: #f5f5f5;
+  border-radius: 24px;
+  border: 5px solid #eaecee;
+  width: 420px;
+  padding: 24px 0 0;
+  margin: 0;
+  transition: all 0.3s ease;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 8px 16px rgba(0, 0, 0, 0.04),
+    0 3px 6px rgba(0, 0, 0, 0.03),
+    0 0 40px rgba(175, 200, 255, 0.08);
+}
+
+.pricing-card-header,
+.plan-title,
+.plan-subtitle,
+.plan-price,
+.plan-desc,
+.plan-btn {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.pricing-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.icon-box {
+  width: 46px;
+  height: 46px;
+  background: linear-gradient(180deg, #f7faff 0%, #edf3ff 100%);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-box img {
+  width: 42px;
+  height: 42px;
+}
+
+.plan-type {
+  font-size: 13px;
+  font-weight: 500;
+  color: #999;
+}
+
+.plan-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 5px;
+}
+
+.plan-subtitle {
+  font-size: 15px;
+  color: #525252;
+  margin-bottom: 15px;
+}
+
+.plan-price {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.old-price {
+  color: #b4b4b4;
+  text-decoration: line-through;
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.new-price {
+  color: #363a47;
+  font-size: 37px;
+  font-weight: 700;
+}
+
+.plan-desc {
+  color: #444;
+  font-size: 15px;
+  margin-bottom: 26px;
+  font-weight: 500;
+}
+
+/* === Button === */
+.plan-btn.outline {
+  display: block;
+  margin: 0 auto;
+  padding: 13px 26px;
+  border: 2px dashed #ccc;
+  border-radius: 9999px;
+  font-size: 15px;
+  font-weight: 600;
+  background: #fff;
+  color: #111;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-align: center;
+}
+
+.plan-btn.outline:hover {
+  border-color: #1a73e8;
+  color: #1a73e8;
+  transform: translateY(-1px);
+}
+
+/* === Included Section === */
+.included-section {
+  margin-top: 36px;
+  background: #f5f5f5;
+  border-radius: 22px;
+  border: 1px solid #e5e8eb;
+  overflow: hidden;
+}
+
+.included-header {
+  background: #f5f5f5;
+  border-bottom: 1px solid #dddfe3;
+  padding: 16px 20px;
+  font-weight: 700;
+  color: #111;
+  font-size: 15px;
+}
+
+.included-list {
+  list-style: none;
+  margin: 0;
+  padding: 30px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.included-list li {
+  font-size: 15px;
+  color: #333;
+  position: relative;
+  padding-left: 28px;
+  line-height: 1.7;
+}
+
+.included-list li::before {
+  content: "✔";
+  color: #1cc15e;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* ==========================================================
+   GROWTH RETAINER PACKAGE (POPULAR CARD WITH RIBBON)
+   ========================================================== */
+
+.pricing-card-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* --- Ribbon --- */
+.popular-ribbon-bg {
+  position: absolute;
+  top: -34px;
+  right: 0;
+  width: 200px;
+  height: 52px;
+  background: linear-gradient(180deg, #2b7cff 0%, #0064ff 100%);
+  border-bottom-left-radius: 12px;
+  border-top-left-radius: 58px;
+  border-top-right-radius: 18px;
+  box-shadow:
+    0 10px 24px rgba(0, 115, 255, 0.35),
+    0 0 12px rgba(0, 115, 255, 0.15);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  font-weight: 500;
+  padding-bottom: 15px;
+  font-size: 16px;
+  letter-spacing: 0.3px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* --- Card --- */
+.pricing-card.popular {
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+  border-radius: 24px;
+  border: 4px solid #AFD6F6;
+  width: 420px;
+  padding: 24px 0 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  box-shadow:
+    0 8px 28px rgba(30, 98, 255, 0.15),
+    0 0 18px rgba(30, 98, 255, 0.12),
+    inset 0 1px 2px rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.pricing-card.popular::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: radial-gradient(
+    ellipse at top,
+    rgba(87, 165, 255, 0.35) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  filter: blur(6px);
+  z-index: 1;
+}
+
+/* --- Header --- */
+.pricing-card.popular .pricing-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+  padding: 0 24px;
+  margin-top: 16px;
+}
+
+/* --- Icon Box --- */
+.pricing-card.popular .icon-box {
+  width: 46px;
+  height: 46px;
+  background: linear-gradient(180deg, #f7faff 0%, #edf3ff 100%);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    inset 0 1px 3px rgba(255, 255, 255, 0.7),
+    0 2px 4px rgba(0, 123, 255, 0.08);
+}
+
+.pricing-card.popular .icon-box img {
+  width: 42px;
+  height: 42px;
+}
+
+/* --- Text Blocks --- */
+.pricing-card.popular .plan-title,
+.pricing-card.popular .plan-subtitle,
+.pricing-card.popular .plan-price,
+.pricing-card.popular .plan-desc {
+  padding: 0 24px;
+}
+
+.pricing-card.popular .plan-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 5px;
+}
+
+.pricing-card.popular .plan-subtitle {
+  font-size: 15px;
+  color: #525252;
+  margin-bottom: 15px;
+}
+
+.pricing-card.popular .plan-price {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.pricing-card.popular .old-price {
+  color: #b4b4b4;
+  text-decoration: line-through;
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.pricing-card.popular .new-price {
+  color: #363A47;
+  font-size: 37px;
+  font-weight: 700;
+}
+
+.pricing-card.popular .price-unit {
+  font-size: 18px;
+  color: #555;
+  font-weight: 500;
+}
+
+.pricing-card.popular .plan-desc {
+  color: #444;
+  font-size: 15px;
+  margin-bottom: 26px;
+  font-weight: 500;
+}
+
+/* --- Button --- */
+
+.plan-btn.blue {
+  display: block;
+  margin: 28px auto 0;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px solid #3db9ff; /* glowing cyan border */
+  border-radius: 9999px; /* pill shape */
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(180deg, #1e90ff 0%, #006cff 100%);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  box-shadow:
+    0 10px 25px rgba(0, 123, 255, 0.25),
+    0 4px 10px rgba(0, 123, 255, 0.15);
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle glossy light reflection overlay */
+.plan-btn.blue::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.25),
+    transparent 70%
+  );
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* hover = lift, brighter gradient, stronger glow */
+.plan-btn.blue:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 16px 32px rgba(0, 123, 255, 0.3),
+    0 8px 16px rgba(0, 123, 255, 0.2);
+  border-color: #5ad3ff;
+  background: linear-gradient(180deg, #2ea2ff 0%, #1870ff 100%);
+}
+
+/* --- Included Section --- */
+.pricing-card.popular .included-section {
+  margin-top: 36px;
+  background: #ffffff;
+  border-radius: 22px;
+  border: 1px solid #e5e8eb;
+  overflow: hidden;
+}
+
+.pricing-card.popular .included-header {
+  background: #ffffff;
+  border-bottom: 1px solid #dddfe3;
+  padding: 16px 20px;
+  font-weight: 700;
+  color: #111;
+  font-size: 15px;
+}
+
+.pricing-card.popular .included-list {
+  list-style: none;
+  margin: 0;
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pricing-card.popular .included-list li {
+  font-size: 15px;
+  color: #333;
+  position: relative;
+  padding-left: 28px;
+  line-height: 1.7;
+}
+
+.pricing-card.popular .included-list li::before {
+  content: "✔";
+  color: #1cc15e;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* ==========================================================
+   RESPONSIVE FIXES (Tablet + Mobile)
+   ========================================================== */
+
+@media (max-width: 992px) {
+  .pricing-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .pricing-card.single,
+  .pricing-card.popular {
+    width: 90%;
+    max-width: 420px;
+  }
+
+  .popular-ribbon-bg {
+    width: 180px;
+    height: 48px;
+    top: -28px;
+    right: 0;
+    font-size: 14px;
+    border-top-left-radius: 52px;
+  }
+}
+
+@media (max-width: 600px) {
+  .pricing-card-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .popular-ribbon-bg {
+    width: 160px;
+    height: 44px;
+    top: -22px;
+    right: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    border-top-left-radius: 48px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 10px;
+    transform: scale(0.95);
+  }
+
+  .pricing-card.single,
+  .pricing-card.popular {
+    width: 94%;
+  }
+
+  .plan-btn.blue,
+  .plan-btn.outline {
+    padding: 11px 22px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  .pricing-heading {
+    font-size: 18px;
+  }
+
+  .popular-ribbon-bg {
+    width: 150px;
+    height: 40px;
+    top: -20px;
+    right: 8px;
+    font-size: 12px;
+    border-top-left-radius: 44px;
+    transform: scale(0.92);
+  }
+}

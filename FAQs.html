@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQs | LaunchPad Labs</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/faqs.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+  <header data-include></header>
+
+  <!-- === FAQ SECTION === -->
+  <section class="foggy-grid-bg faq-section">
+  <div class="faq-container">
+    <!-- LEFT SIDE -->
+    <div class="faq-left">
+      <!-- Capsule -->
+      <div class="pulse-section">
+        <div class="pulse-pill">
+          <div class="pulse-pill-inner">
+            <div class="pulse-dot"></div>
+            <span>FAQ</span>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="faq-heading">Got Questions? We’ve Got Answers</h2>
+      <p class="faq-subtext">Simple explanations for your most important questions.</p>
+
+      <div class="faq-list">
+        <div class="faq-item active">
+          <button class="faq-question">
+            How long does it take to launch my MVP with LaunchPad Labs?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>We specialize in speed. Most MVPs are launched in as little as 2–4 weeks, depending on complexity.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What exactly is included in the MVP package?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Our MVP package includes UI/UX design, development, testing, and final deployment — everything to get your idea live fast.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Do I need to have all my ideas finalized before starting?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>No! We’ll help you refine, validate, and shape your concept into a clear, executable product strategy.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            How involved will I be during the development process?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>You’ll be updated regularly with progress milestones and feedback rounds, ensuring transparency and collaboration.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I scale my MVP into a full product later?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely. Every MVP we build is designed to scale smoothly into a full-featured product as your user base grows.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="faq-right">
+      <div class="cta-card">
+        <img src="assets/founder1.jpg" class="cta-img" />
+        <h3>Still not sure?</h3>
+        <h2>Book a free call.</h2>
+        <p>Learn more about how we work and how we can help you and your startup.</p>
+        <button class="book-btn">
+          <i class="fa fa-phone"></i> Book A Call
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <footer data-include></footer>
+
+  <script src="js/include.js"></script>
+  <script src="script.js"></script>
+
+ <script>
+  const faqItems = document.querySelectorAll(".faq-item");
+  faqItems.forEach(item => {
+    const button = item.querySelector(".faq-question");
+    button.addEventListener("click", () => {
+      item.classList.toggle("active");
+      faqItems.forEach(other => {
+        if (other !== item) other.classList.remove("active");
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
