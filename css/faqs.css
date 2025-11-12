@@ -1,8 +1,6 @@
-/* ==========================================================
-   PULSE CAPSULE (FAQ TAG AT TOP)
-   ========================================================== */
 
-/* Container for centering */
+
+
 .pulse-section {
   display: flex;
   justify-content: start;
@@ -12,7 +10,7 @@
   z-index: 2;
 }
 
-/* Outer glowing capsule */
+
 .pulse-pill {
   display: inline-flex;
   justify-content: center;
@@ -24,7 +22,7 @@
   animation: fadeIn 0.6s ease forwards;
 }
 
-/* Inner white capsule */
+
 .pulse-pill-inner {
   display: inline-flex;
   align-items: center;
@@ -42,7 +40,7 @@
     inset 0 0 6px rgba(255, 255, 255, 0.8);
 }
 
-/* Blue glowing dot */
+
 .pulse-dot {
   width: 10px;
   height: 10px;
@@ -54,7 +52,7 @@
   animation: softPulse 2.6s ease-in-out infinite;
 }
 
-/* Pulse animation */
+
 @keyframes softPulse {
   0%, 100% {
     transform: scale(1);
@@ -96,9 +94,6 @@
   }
 }
 
-/* ==========================================================
-   FAQ SECTION MAIN LAYOUT
-   ========================================================== */
 .faq-section {
   padding: 100px 40px 120px;
   font-family: "Plus Jakarta Sans", sans-serif;
@@ -114,7 +109,7 @@
   margin: 0 auto;
 }
 
-/* === LEFT SIDE === */
+
 .faq-left {
   flex: 1 1 620px;
 }
@@ -132,9 +127,7 @@
   margin-bottom: 50px;
 }
 
-/* ==========================================================
-   FAQ LIST + INTERACTION
-   ========================================================== */
+
 
 .faq-list {
   display: flex;
@@ -157,7 +150,7 @@
   transform: translateY(-2px);
 }
 
-/* === QUESTION BUTTON === */
+
 .faq-question {
   width: 100%;
   padding: 24px 28px;
@@ -179,7 +172,6 @@
 }
 
 
-/* === ICON EFFECT (Smooth Morph + → −) === */
 .faq-icon {
   position: relative;
   width: 20px;
@@ -187,7 +179,6 @@
   display: inline-block;
 }
 
-/* Base lines (for +) */
 .faq-icon::before,
 .faq-icon::after {
   content: "";
@@ -201,7 +192,7 @@
   will-change: transform, opacity;
 }
 
-/* Vertical line */
+
 .faq-icon::before {
   width: 2px;
   height: 100%;
@@ -211,7 +202,7 @@
   transform-origin: center center;
 }
 
-/* Horizontal line */
+
 .faq-icon::after {
   width: 100%;
   height: 2px;
@@ -235,7 +226,7 @@
 
 
 
-/* === ANSWER BOX ANIMATION === */
+
 .faq-answer {
   overflow: hidden;
   max-height: 0;
@@ -258,7 +249,7 @@
   background: #fff;
 }
 
-/* === Inner dashed border box === */
+
 .faq-item.active .faq-answer p {
   padding: 18px 20px;
   border: 1px dashed rgba(200, 215, 240, 0.9);
@@ -272,7 +263,7 @@
   animation: fadeInText 0.45s ease forwards;
 }
 
-/* Text fade-in */
+
 @keyframes fadeInText {
   from {
     opacity: 0;
@@ -358,9 +349,6 @@
     0 8px 16px rgba(0, 123, 255, 0.2);
 }
 
-/* ==========================================================
-   RESPONSIVE DESIGN
-   ========================================================== */
 @media (max-width: 992px) {
   .faq-container {
     flex-direction: column;
@@ -392,11 +380,32 @@
   .faq-answer p {
     font-size: 14px;
   }
+
+
+  .book-btn {
+    background: linear-gradient(180deg, #1e90ff 0%, #006cff 100%);
+    color: #fff;
+    border: 2px solid #3db9ff;
+    padding: 12px 28px;
+    border-radius: 9999px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.25), 0 4px 10px rgba(0, 123, 255, 0.15);
+    transition: all 0.25s ease;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 
 
-/* === Soft blue glow when active === */
+}
+
+
+
+
 .faq-item.active {
   border-color: #d2e4ff;
   box-shadow:
@@ -405,7 +414,7 @@
   animation: activeGlow 1.8s ease-in-out infinite alternate;
 }
 
-/* Subtle glowing border animation */
+
 @keyframes activeGlow {
   0% {
     box-shadow:
@@ -418,3 +427,6 @@
       0 0 0 3px rgba(26, 115, 232, 0.09);
   }
 }
+
+
+
