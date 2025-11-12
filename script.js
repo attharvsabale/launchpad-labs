@@ -1,8 +1,9 @@
-
-document.addEventListener("DOMContentLoaded", () => {
-
+// ------------------ MAIN SCRIPT ------------------
+function initApp() {
+  // Delay slightly to ensure included HTML is loaded
   setTimeout(() => {
 
+    // ------------------ CARD SLIDER ------------------
     const cards = document.querySelectorAll(".video-card");
     const dots = document.querySelectorAll(".dot");
 
@@ -26,20 +27,29 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-
+    // ------------------ MOBILE MENU ------------------
     const menuToggle = document.querySelector(".menu-toggle");
     const overlay = document.querySelector(".menu-overlay");
     const mobileMenu = document.querySelector(".mobile-menu");
 
     if (menuToggle && overlay && mobileMenu) {
-      menuToggle.addEventListener("click", () => {
-        menuToggle.classList.toggle("active");
+      // ✅ Clone element to reset old listeners (important for cached reloads)
+      const newToggle = menuToggle.cloneNode(true);
+      menuToggle.parentNode.replaceChild(newToggle, menuToggle);
+
+      // Toggle menu open/close
+      function toggleMenu() {
+        newToggle.classList.toggle("active");
         overlay.classList.toggle("active");
         mobileMenu.classList.toggle("active");
-      });
+      }
 
+      newToggle.addEventListener("click", toggleMenu, false);
+      newToggle.addEventListener("touchstart", toggleMenu, false);
+
+      // Close menu when overlay is clicked
       overlay.addEventListener("click", () => {
-        menuToggle.classList.remove("active");
+        newToggle.classList.remove("active");
         overlay.classList.remove("active");
         mobileMenu.classList.remove("active");
       });
@@ -48,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
- 
+    // ------------------ SCROLL ANIMATIONS ------------------
     const fadeElements = document.querySelectorAll(".mvp-left-panel, .mvp-calendar, .mvp-time-panel");
 
     if (fadeElements.length > 0) {
@@ -62,5 +72,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
       fadeElements.forEach(el => observer.observe(el));
     }
+
   }, 250); // wait 250ms to ensure include.js injected HTML
+}
+
+// ------------------ EVENT BINDING ------------------
+
+// Run on first page load
+document.addEventListener("DOMContentLoaded", initApp);
+
+// Run again when page is restored from cache (e.g., reopening on mobile)
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    initApp();
+  }
 });
